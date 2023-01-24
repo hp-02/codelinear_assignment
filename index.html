@@ -6,6 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Linear</title>
+    <style>
+        #logo:hover p {
+            display: block;
+        }
+    </style>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -24,8 +29,9 @@
 
 <body class="font-thin">
     <header class="bg-black fixed w-full z-10">
-        <div class="absolute left-8 sm:left-32">
+        <div class="absolute left-8 sm:left-32 hover:scale-x-110 hover:duration-200 origin-top-left" id="logo">
             <img src="/images/logo.svg" />
+            <p class="ml-10 mt-[-2px] text-white w-max text-primary_yellow hidden">we're all ears</p>
         </div>
         <div class="absolute right-8 mt-10 sm:right-32">
             <div class="w-[48px] sm:w-[64px] border-2 border-primary_yellow bg-primary_yellow mb-4"></div>
@@ -52,7 +58,8 @@
                 </p>
             </div>
             <div class="mt-8">
-                <p class="text-xl text-white sm:text-2xl border-b-2 border-grey w-max cursor-pointer">About Us</p>
+                <p class="text-xl text-white sm:text-2xl w-max cursor-pointer">About Us</p>
+                <p class="w-[40px] sm:w-[64px] border border-white"></p>
             </div>
         </div>
     </section>
@@ -269,6 +276,9 @@
             </div>
         </div>
     </section>
+    <script>
+        const logo = document.getElementById("logo");
+    </script>
 </body>
 
 </html>
