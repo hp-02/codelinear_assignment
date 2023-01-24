@@ -10,6 +10,17 @@
         #logo:hover p {
             display: block;
         }
+
+        .border-full-width {
+            transition: 0.2s;
+            width: 100% !important;
+        }
+
+        .hug:hover {
+            text-shadow: 3px 3px 200px #cdcdcd,
+                -2px 1px 40px #ffffff;
+            opacity: 0.2;
+        }
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -57,7 +68,7 @@
                     nunc mattis euismod augue quisque.
                 </p>
             </div>
-            <div class="mt-8">
+            <div class="mt-8 w-max expand-border">
                 <p class="text-xl text-white sm:text-2xl w-max cursor-pointer">About Us</p>
                 <p class="w-[40px] sm:w-[64px] border border-white"></p>
             </div>
@@ -83,7 +94,7 @@
                     editor auto figjam layout. Image pen editor hand community object underline rotate.
                 </p>
             </div>
-            <div class="mt-4 text-white">
+            <div class="mt-4 text-white w-max expand-border">
                 <p class="text-xl sm:text-2xl">All Works</p>
                 <p class="w-[40px] sm:w-[50px] border border-white"></p>
             </div>
@@ -153,7 +164,7 @@
             </p>
             <p class="py-1 w-max sm:mx-auto">Digital Marketing<sup class="text-sm px-1">04</sup></p>
         </div>
-        <div class="mt-6 w-max sm:mx-auto px-2 sm:px-0">
+        <div class="mt-6 w-max sm:mx-auto px-2 sm:px-0 expand-border">
             <p class="text-xl sm:text-2xl">Explore All Services</p>
             <p class="w-[74px] sm:w-[90px] border border-black"></p>
         </div>
@@ -247,8 +258,10 @@
         </div>
     </section>
     <section class="bg-black text-white py-16">
-        <p class="text-center text-2xl ">Wanna Know A Secret?</p>
-        <p class="h-[345px] mx-auto mt-8"></p>
+        <p class="text-center text-2xl">Wanna Know A Secret?</p>
+        <div class="mx-auto mt-8 center text-black text-[12rem] py-8 font-normal hug pointer">
+            <p class="mx-auto w-max">Let's Talk</p>
+        </div>
         <div class="md:flex flex-wrap md:justify-around">
             <p class="text-2xl p-4">Codelinear</p>
             <div class="p-4">
@@ -277,7 +290,15 @@
         </div>
     </section>
     <script>
-        const logo = document.getElementById("logo");
+        const expandBorders = document.querySelectorAll(".expand-border");
+        expandBorders.forEach(expandBorder => {
+            expandBorder.addEventListener('pointerenter', function (e) {
+                e.currentTarget.children[1].classList.add("border-full-width");
+            });
+            expandBorder.addEventListener('pointerleave', function (e) {
+                e.currentTarget.children[1].classList.remove("border-full-width");
+            });
+        });
     </script>
 </body>
 
